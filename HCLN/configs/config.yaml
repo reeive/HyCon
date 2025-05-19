@@ -1,0 +1,49 @@
+
+seed: 2024 # 随机种子
+
+data:
+  data_dir: "/path/to/your/data_root_directory" 
+  mode1_suffix: "org"      
+  mode2_suffix: "syn"       
+  mask_folder: "seg_masks" 
+  
+  labeled_list_file: "train_labeled_samples.txt" 
+  all_nodes_list_file: "all_hypergraph_samples.txt"
+  val_list_file: "validation_samples.txt"      
+  edge_list_file: "/path/to/your/edge_list.pt" 
+
+  labeled_image_rate: 1.0 
+  num_classes_teacher: 2  
+  num_segmentation_classes_student: 5
+  ft_noise_level: 0.0  
+  hc_noise_level: 1.0     
+
+model:
+  teacher_model_type: "Hypergraph" 
+  teacher_nn: "hgnn"      # hgnn, hgnnp, gcn
+  teacher_hid: 64       
+  student_nn: "light_hgnnp" 
+  student_hid: 128       
+
+loss:
+  lamb: 0.0               
+  tau_kd: 1.0             
+  tau_hc: 1.0             
+
+train:
+  feature_extraction_batch_size: 32 
+  num_workers: 4                  
+  num_epochs_teacher: 100         
+  num_epochs_student: 150         
+  lr_teacher: 0.001               
+  weight_decay_teacher: 0.0005    
+  lr_student: 0.001             
+  weight_decay_student: 0.0005   
+
+# Hydra 运行和输出目录配置 (可以保持默认或自定义)
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}
