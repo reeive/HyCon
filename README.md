@@ -11,10 +11,10 @@
 ## ✨ Highlights
 | Component | What it does | Why it matters |
 |-----------|--------------|----------------|
-| **Stage-1 Adversarial Pre-training** | Learns cross-modal features via CycleGAN / Pix2Pix style translation. | Reduces domain gaps early. |
+| **Stage-1 Adversarial Pre-training** | Learns cross-modal features via CycleGAN style translation. | Reduces domain gaps early. |
 | **Hypergraph Contrastive Learning Network (HCLN)** | Builds hyperedges across images and modalities, then performs student–teacher contrastive learning. | Captures *high-order* relationships that plain graphs miss. |
 | **Topology Hybrid Distillation (THD)** | Distills topological patterns, context, and relations from teacher → student. | Retains useful cues while avoiding catastrophic forgetting. |
-| **Two-Organ Benchmark** | Lung (CT) and Brain (MRI); 5 % labeled data. | Demonstrates robustness across anatomy and modality. |
+| **Two-Organ Benchmark** | Lung (CT) and Brain (MRI); 5 % and 10% labeled data. | Demonstrates robustness across anatomy and modality. |
 
 ---
 
