@@ -1,6 +1,6 @@
 # HyCon: Hypergraph Contrastive Self-Supervised Learning for Multi-Modal Medical Image Segmentation
 
-![HyCon Framework](docs/figures/hycon_pipeline.png)
+![HyCon Framework](figures/hycon_pipeline.png)
 
 > **Self-supervised learning (SSL)** has become the de-facto starting point for multi-modal medical image segmentation.  
 > Yet **sequential SSL** forgets previous modalities and **joint SSL** entangles conflicting cues.  
